@@ -50,7 +50,7 @@ pipeline {
 }
   post {
         failure {
-            mail bcc: '', body: '''Error occured   !!!''', cc: '', from: '', replyTo: '', subject: 'Pipleline failiure', to: 'jo_hadjaissafekhar@esi.dz'
+            mail bcc: '', body: '''Error occured    !!!''', cc: '', from: '', replyTo: '', subject: 'Pipleline failiure', to: 'jo_hadjaissafekhar@esi.dz'
         }
   }
 
