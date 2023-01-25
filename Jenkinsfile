@@ -4,7 +4,7 @@ pipeline {
     
     stage('test'){
         steps{
-          bat 'gradle test'
+          bat 'gradlew test'
           archiveArtifacts 'build/test-results/'
           cucumber reportTitle: 'Report',
                    fileIncludePattern: 'target/report.json',
@@ -16,7 +16,7 @@ pipeline {
     stage ('Code Analysis') {
       steps{
         withSonarQubeEnv('sonare') {
-          bat "gradle sonarqube"
+          bat "gradlew sonarqube"
         }
       }
     }
@@ -38,13 +38,13 @@ pipeline {
     
     stage("Deploy") {
       steps {
-          bat "gradle publish" 
+          bat "gradlew publish" 
       } 
     }
     
     stage("Notification") {
       steps {
-          notifyEvents message: 'Good evening <b>ISLAM</b>', token: 'hNmvPSDaVAbXJ39nb-Yscop9bwU7hA6Q'
+          notifyEvents message: 'success', token: 'hNmvPSDaVAbXJ39nb-Yscop9bwU7hA6Q'
       }
     }
 }
