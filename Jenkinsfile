@@ -44,7 +44,7 @@ pipeline {
     
     stage("Notification") {
       steps {
-          notifyEvents message: 'success', token: 'hNmvPSDaVAbXJ39nb-Yscop9bwU7hA6Q'
+          notifyEvents message: 'Congrats , success', token: 'hNmvPSDaVAbXJ39nb-Yscop9bwU7hA6Q'
       }
     }
 }
